@@ -1,0 +1,39 @@
+Sobre o projeto typescript o processo de criação é basicamente o mesmo de um projeto javascript
+typescript é um superset do javascript como se fosse um javascript tunado/melhorado.
+
+então criamos o diretório abrimos o mesmo no terminal, cmd, powershell e executamos o comando
+"yarn init -y", este comando adiciona nosso package.json que tem algumas configurações.
+ 
+Após isso instalamos a biblioteca express com o comando "yarn add express", ele vai criar o dir node_modules
+e adicionar o arquivo yarn.lock.
+
+depois disso criamos o diretório src e podemos dar sequencia no desenvolvimento da nossa solução.
+geralmente começamos com o arquivo server.ts, que é onde definimos porta de conexão que nossa aplicação vai usar
+definimos também que nossa aplicação vai usar o express, podemos criar os endpoints e etc. Isso vai depender 
+da arquitetura, padrões de projeto, esse estudo é de nivel inicial e básico.
+
+Para termos ativo o intelissense do express ativo no vscode, para nos ajudar com autocomplete e sugestões de 
+funções, métodos, palavras reservadas da biblioteca devemos adicionar as tipagens da biblioteca que fica em uma
+outra bibliteca, para isso usamos o "yarn add @types/express" muitas outras bibliotecas utilizam essa nomenclatura
+também
+
+para usar typescript a extensão dos arquivos é .ts ja o javascript .js
+
+Outro detalhe, diferente do javascript aqui no typescript não é utilizado o require para importar bibliotecas
+mas sim o " import x from 'biblioteca' "; e o export quando queremos deixar uma função disponivel para outras 
+classes por exemplo. Porém o node não reconhece esta forma.
+
+então temos que converter o nosso arquivo para uma forma que o node entenda tudo que está sendo declarado aqui dentro
+do nosso código, para isso usamos os seguintes comandos.
+
+yarn add typescript -D (pode ser instalado de forma global também mas a instrutora preferiu instalar no projeto)
+yarn tsc --init (cria o arquivo tsconfig.json, arquivo de configuração onde conseguimos adicionar infos e configs)
+
+yarn tsc (converte nosso código typescript em código mais "amigavel" em javascript que o node entenda)
+porém executar esse comando vai gerar varios arquivos .js em nosso diretório, para resolver isso, vamos ao tsconfig.json
+e descomentamos o "outDir" que vai redirecionar estes arquivos.js para outro diretório que definirmos neste projeto 
+foi definido ./dist.
+
+
+configurações eslint e prettier para projeto RENTALX
+https://efficient-sloth-d85.notion.site/ESLint-e-Prettier-Trilha-Node-js-d3f3ef576e7f45dfbbde5c25fa662779
